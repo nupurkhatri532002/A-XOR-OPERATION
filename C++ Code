@@ -1,0 +1,42 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int t,arr2[100],arroriginal[100],b;
+    cin>>t;
+    while(t!=0)
+    {   int n;
+        cin>>n;
+        for(int a=0;a<n;a++)
+        {
+            cin>>arroriginal[a];
+        }
+        for(int k=1;k<10;k++)
+        {   for(int j=0;j<n;j++)
+           {  arr2[j]=((arroriginal[j])^k);
+           }
+          sort(arroriginal, arroriginal + n);
+          sort(arr2, arr2  + n);
+          for (int i = 0; i < n; i++)
+           {if (arroriginal[i] != arr2[i])
+              { b=0;
+              break;}
+            else 
+               b=1;
+           }   
+            if(b==1)
+               { cout<<k;
+               exit(0);}
+           
+        }
+        t--;
+    }
+
+    return 0;
+}
+ 
